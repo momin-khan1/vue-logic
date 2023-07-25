@@ -1,52 +1,54 @@
 <script setup>
 import { ref } from 'vue';
 
-const location = 'Dhaka'
-const weather = ref("s");
+const color = "Color Combination";
+const colorLogic = ref("green");
 </script>
 
 <template>
   <section class="container mx-auto flex items-center flex-col">
-    <h1 class="text-center text-2xl py-10">Logic</h1>
-    <div class="w-1/3 bg-gray-200 p-10 flex items-center flex-col space-y-10">
-      <h1 class="text-3xl">{{ location }}</h1>
+    <h1 class="text-center text-2xl py-10">Color Change Logic</h1>
+    <div class="w-800px bg-sky-100 p-10 flex items-center flex-col space-y-10">
+      <h1 class="text-3xl">{{ color }}</h1>
 
-      <template v-if="'s'===weather">
-        <h2 class="text-2xl">Weather: Sunny</h2>
-      <img
-        src="https://creazilla-store.fra1.digitaloceanspaces.com/icons/7911203/weather-icon-md.png"
-        alt=""
-      />
+      <template v-if="'red' === colorLogic">
+        <h2 class="text-2xl">Color: Red</h2>
+        <h2 class="text-xl">Hexa Code: #FCA5A5</h2>
+        <div class="bg-red-300 p-10 rounded-full text-white"></div>
       </template>
 
-      <template v-if="'pc'===weather" >
-        <h2 class="text-2xl">Weather: Partly Cloudy</h2>
-      <img
-        src="https://creazilla-store.fra1.digitaloceanspaces.com/icons/7912718/weather-icon-md.png"
-        alt=""
-      />
+      <template v-if="'blue' === colorLogic">
+        <h2 class="text-2xl">Color: blue</h2>
+        <h2 class="text-xl">Hexa Code: #93C5FD</h2>
+        <div class="bg-blue-300 p-10 rounded-full text-white"></div>
       </template>
 
-      <template v-if="'r'===weather">
-        <h2 class="text-2xl">Weather: Rainy</h2>
-      <img
-        src="https://creazilla-store.fra1.digitaloceanspaces.com/icons/7913380/weather-icon-md.png"
-        alt=""
-      />
+      <template v-if="'green' === colorLogic">
+        <h2 class="text-2xl">Color: Green</h2>
+        <h2 class="text-xl">Hexa Code: #86EFAC</h2>
+        <div class="bg-green-300 p-10 rounded-full text-white"></div>
       </template>
 
-      <template v-if="'t'===weather">
-        <h2 class="text-2xl">Weather: Thunderstrom</h2>
-      <img
-        src="https://creazilla-store.fra1.digitaloceanspaces.com/icons/7912589/weather-icon-md.png"
-        alt=""
-      />
+      <template v-if="'orange' === colorLogic">
+        <h2 class="text-2xl">Color: Orange</h2>
+        <h2 class="text-xl">Hexa Code: #FDBA74</h2>
+        <div class="bg-orange-300 p-10 rounded-full text-white"></div>
       </template>
 
-      <input type="text" placeholder="Weather Status" class="text-center px-5 p-3" v-model="weather">
+      <template v-if="'yellow' === colorLogic">
+        <h2 class="text-2xl">Color: Yellow</h2>
+        <h2 class="text-xl">Hexa Code: #FDE047</h2>
+        <div class="bg-yellow-300 p-10 rounded-full text-white"></div>
+      </template>
 
-      <p>[Please Type: s, t, pc or r]</p>
-      
+      <input
+        placeholder="Write Your Color"
+        class="text-center px-5 p-3"
+        type="text"
+        v-model="colorLogic"
+      />
+
+      <p>Colors Available: [red, green, blue, orange, yellow]</p>
     </div>
   </section>
 </template>
